@@ -1,0 +1,2 @@
+source envvars.sh
+rm -rf $BINUTILS_BUILD_DIR  $GCC_BUILD_DIR $NEWLIB_BUILD_DIR
