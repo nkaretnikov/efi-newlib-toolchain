@@ -44,19 +44,19 @@ make install-gcc
 # Newlib.
 mkdir $NEWLIB_SRC_DIR
 cd $NEWLIB_SRC_DIR
-git clone git://sourceware.org/git/newlib-cygwin.git 
+git clone git://sourceware.org/git/newlib-cygwin.git
 cd newlib-cygwin
 git checkout eed35efbe67e3b0588d5afbdf7926eb9f52e5766
 
 mkdir $NEWLIB_BUILD_DIR
 cd $NEWLIB_BUILD_DIR
-$NEWLIB_CONFIGURE  --target=$TARGET --prefix=$PREFIX
+$NEWLIB_CONFIGURE --target=$TARGET --prefix=$PREFIX
 make all -j4
 make install
 
 # GCC again.
 cd $GCC_BUILD_DIR
-$GCC_CONFIGURE --target=$TARGET --prefix=$PREFIX --with-newlib --with-gnu-as --with-gnu-ld --disable-shared --disable-libssp --enable-languages=c,c++ 
+$GCC_CONFIGURE --target=$TARGET --prefix=$PREFIX --with-newlib --with-gnu-as --with-gnu-ld --disable-shared --disable-libssp --enable-languages=c,c++
 make all -j4
 make install
 
